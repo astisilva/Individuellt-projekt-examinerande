@@ -1,0 +1,28 @@
+.navbar {
+  background-color: #9b7ebd;
+  padding: 20px 20px;
+}
+
+.navbar ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar li {
+  margin: 0 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #e7b5c0; /* Light Pink */
+  font-weight: bold;
+}
+.hundar {
+  margin-left: auto;
+}
+a:hover {
+  color: #ffc0cb;
+  transition: color 0.3s ease;
+}
