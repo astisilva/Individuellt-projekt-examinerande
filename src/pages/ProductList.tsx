@@ -7,6 +7,8 @@ interface Dog {
   name: string;
   img: string;
   chipNumber: string;
+  breed: string;
+  age: number;
 }
 
 export default function ProductList(): ReactElement {
@@ -44,7 +46,9 @@ export default function ProductList(): ReactElement {
             <Link to={`/productdetails/${dog.chipNumber}`}>
               <img src={dog.img} alt={dog.name} />
             </Link>
-            {dog.name}
+            <span className='dog-name'>{dog.name}</span>
+            <p className='dog-breed'>Ras: {dog.breed}</p> 
+            <p className='dog-age'>Ålder: {dog.age} år</p>
           </li>
         ))}
       </ul>

@@ -14,12 +14,12 @@
   margin: 0 15px;
 }
 
-a {
+.navbar a {
   text-decoration: none;
   color: #e7b5c0; /* Light Pink */
   font-weight: bold;
 }
-.hundar {
+.navbar .hundar {
   margin-left: auto;
 }
 a:hover {

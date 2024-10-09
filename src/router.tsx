@@ -1,4 +1,4 @@
-import { createBrowserRouter, createRoutesFromElements, Route, Routes } from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ProductList from "./pages/ProductList";
 import ProductDetails from "./pages/ProductDetails";
@@ -11,7 +11,7 @@ export const router = createBrowserRouter(
     <Route element={<App />} path="/">
       <Route index element={<Home />} />
       <Route path="/productlist" element={<ProductList />} />
-      <Route path="/product/:chipNumber" element={<ProductDetails />} />
+      <Route path="/productdetails/:chipNumber" element={<ProductDetails />} />
       <Route path="/productform" element={<ProductForm />} />
       <Route path="/edit/:chipNumber" element={<ProductForm />} />
       <Route path="*" element={<ErrorPage
