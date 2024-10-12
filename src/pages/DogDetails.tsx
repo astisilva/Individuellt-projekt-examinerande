@@ -1,19 +1,14 @@
 import { ReactElement, useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Dog } from '../models/Dog';
+import { Button } from '../components/Button';
 
-interface Dog {
-  id: number;
-  name: string;
-  img: string;
-  chipNumber: string;
-  breed: string;
-  age: number;
-}
-
-export default function ProductDetails(): ReactElement {
+export default function DogDetails(): ReactElement {
   const [dog, setDog] = useState<Dog | null>(null);
-
   const { chipNumber } = useParams();
+  const navigate = useNavigate();
+
+  
   console.log('chipNumber: ', chipNumber);
 
   useEffect(() => {
@@ -31,6 +26,18 @@ export default function ProductDetails(): ReactElement {
     fetchDog();
   }, [chipNumber]);
 
+  const handleDelete = (chipNumber: string) => {
+    // hämta hundarna som finns i localstorage och gör om de till array
+    const storedDogs = JSON.parse(localStorage.getItem('dogs') || '[]');
+    // Jämför varje hunds chipNumber med det givna chipNumber och tar bort hunden vars chipNumber matchar
+    const upDatedDogs = storedDogs.filter((dog: Dog) => dog.chipNumber !== chipNumber);
+    //
+    // spara uppdaterade hundarna till localstorage
+    localStorage.setItem('dogs', JSON.stringify(upDatedDogs));
+    setDog(upDatedDogs);
+    navigate('/doglist');
+  };
+
   return (
     <div className="product-details">
       {dog ? (
@@ -44,12 +51,13 @@ export default function ProductDetails(): ReactElement {
           </section>
           <div className="buttons">
             <Link to={`/edit/${dog.chipNumber}`}>
-              <button>Redigera</button>
+              <Button>Redigera</Button>
             </Link>
 
-            <Link to="/productlist">
-              <button>Tillbaka</button>
+            <Link to="/doglist">
+              <Button>Tillbaka</Button>
             </Link>
+            <Button onClick={() => handleDelete(dog.chipNumber)}>Ta bort</Button>
           </div>
         </>
       ) : (

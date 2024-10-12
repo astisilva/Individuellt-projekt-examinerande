@@ -1,19 +1,19 @@
 import { createBrowserRouter, createRoutesFromElements, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import ProductList from "./pages/ProductList";
-import ProductDetails from "./pages/ProductDetails";
-import ProductForm from "./pages/ProductForm";
 import App from "./App";
 import ErrorPage from "./pages/ErrorPage";
+import DogList from "./pages/DogList";
+import DogDetails from "./pages/DogDetails";
+import DogForm from "./pages/DogForm";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route element={<App />} path="/">
       <Route index element={<Home />} />
-      <Route path="/productlist" element={<ProductList />} />
-      <Route path="/productdetails/:chipNumber" element={<ProductDetails />} />
-      <Route path="/productform" element={<ProductForm />} />
-      <Route path="/edit/:chipNumber" element={<ProductForm />} />
+      <Route path="/doglist" element={<DogList />} />
+      <Route path="/dogdetails/:chipNumber" element={<DogDetails />} />
+      <Route path="/dogform" element={<DogForm />} />
+      <Route path="/edit/:chipNumber" element={<DogForm />} />
       <Route path="*" element={<ErrorPage
        />}/>
 
