@@ -2,9 +2,11 @@ import { ReactElement, useEffect, useState } from 'react';
 import '../styles/DogList.css';
 import DogCard from '../components/DogCard';
 import { Dog } from '../models/Dog';
+import { useAuth } from '../context/AuthContext';
 
 export default function DogList(): ReactElement {
   const [dogs, setDogs] = useState<Dog[]>([]);
+  const { isAuthenticated } = useAuth(); 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,17 +25,11 @@ export default function DogList(): ReactElement {
             throw new Error(message);
           }
 
-          const dogsData = await response.json();
-          console.log('Dogsdata from API:', dogsData);
-          setDogs(dogsData);
+          const dogsData: Dog[] = await response.json();
           localStorage.setItem('dogs', JSON.stringify(dogsData));
-          console.log(
-            'Dogs saved to localStorage:',
-            JSON.parse(localStorage.getItem('dogs') || '[]')
-          );
+          setDogs(dogsData);
         }
       } catch (error) {
-        // Hanterar fel
         console.error('Error fetching dogs:', error.message);
       }
     };
@@ -56,9 +52,10 @@ export default function DogList(): ReactElement {
       <h1>Våra hundar</h1>
       <ul>
         {dogs.map((dog) => (
-        < DogCard dog={dog} onDelete={handleDelete } />
+          <DogCard dog={dog} key={dog.chipNumber} isAuthenticated={isAuthenticated}  onDelete={isAuthenticated ? () => handleDelete(dog.chipNumber):undefined} />
         ))}
       </ul>
+      {!isAuthenticated && <p>Du måste logga in för att kunna ta bort hundar.</p>}
     </article>
   );
 }

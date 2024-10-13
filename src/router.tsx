@@ -5,6 +5,7 @@ import ErrorPage from "./pages/ErrorPage";
 import DogList from "./pages/DogList";
 import DogDetails from "./pages/DogDetails";
 import DogForm from "./pages/DogForm";
+import Login from "./pages/Login";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -14,6 +15,7 @@ export const router = createBrowserRouter(
       <Route path="/dogdetails/:chipNumber" element={<DogDetails />} />
       <Route path="/dogform" element={<DogForm />} />
       <Route path="/edit/:chipNumber" element={<DogForm />} />
+      <Route path="/login" element={<Login />} /> 
       <Route path="*" element={<ErrorPage
        />}/>
 

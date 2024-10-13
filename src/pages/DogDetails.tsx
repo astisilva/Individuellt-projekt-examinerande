@@ -8,22 +8,25 @@ export default function DogDetails(): ReactElement {
   const { chipNumber } = useParams();
   const navigate = useNavigate();
 
-  
+
   console.log('chipNumber: ', chipNumber);
 
   useEffect(() => {
-    const fetchDog = async () => {
-      try {
-        const response = await fetch(`https://majazocom.github.io/Data/dogs.json`);
+    /*  const fetchDog = async () => {
+     try {
+        const response = await fetch('https://majazocom.github.io/Data/dogs.json');
         const dogsData = await response.json();
         const selectedDog = dogsData.find((dog: Dog) => dog.chipNumber === chipNumber);
-        setDog(selectedDog);
+        setDog(selectedDog || null);
       } catch (error) {
         console.error('Error fetching dog details:', error);
       }
-    };
+    }; */
 
-    fetchDog();
+  /*   fetchDog(); */
+  const storedDogs = JSON.parse(localStorage.getItem('dogs') || '[]');
+  const selectedDog = storedDogs.find((dog: Dog) => dog.chipNumber === chipNumber);
+  setDog(selectedDog || null);
   }, [chipNumber]);
 
   const handleDelete = (chipNumber: string) => {
@@ -34,7 +37,7 @@ export default function DogDetails(): ReactElement {
     //
     // spara uppdaterade hundarna till localstorage
     localStorage.setItem('dogs', JSON.stringify(upDatedDogs));
-    setDog(upDatedDogs);
+  /*   setDog(upDatedDogs); */
     navigate('/doglist');
   };
 
@@ -44,10 +47,23 @@ export default function DogDetails(): ReactElement {
         <>
           <section>
             <h1>{dog.name}</h1>
+            <p>Chipnummer: {dog.chipNumber}</p>
+
             <img src={dog.img} alt={dog.name} />
             <p>Ras: {dog.breed}</p>
             <p>Ålder: {dog.age} år</p>
-            <p>Chipnummer: {dog.chipNumber}</p>
+            
+            <p>Närvarande: {dog.present ? 'Ja' : 'Nej'}</p>
+            
+            <h2>Ägarinformation</h2>
+            {dog.owner ? (
+              <>
+                <p>Ägare: {dog.owner.name} {dog.owner.lastName}</p>
+                <p>Telefonnummer: {dog.owner.phoneNumber}</p>
+              </>
+            ) : (
+              <p>Ingen ägarinformation tillgänglig</p>
+            )}
           </section>
           <div className="buttons">
             <Link to={`/edit/${dog.chipNumber}`}>
@@ -61,7 +77,7 @@ export default function DogDetails(): ReactElement {
           </div>
         </>
       ) : (
-        <p>loading...</p>
+        <p>Loading...</p>
       )}
     </div>
   );

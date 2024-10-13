@@ -1,3 +1,9 @@
+export interface Owner {
+  name: string;
+  lastName: string;
+  phoneNumber: string;
+}
+
 export interface Dog {
   id: number;
   name: string;
@@ -5,4 +11,7 @@ export interface Dog {
   chipNumber: string;
   breed: string;
   age: number;
+  sex: string;
+  present: boolean;
+  owner?: Owner;
 }
