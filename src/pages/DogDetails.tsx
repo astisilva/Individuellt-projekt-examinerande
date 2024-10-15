@@ -2,6 +2,7 @@ import { ReactElement, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Dog } from '../models/Dog';
 import { Button } from '../components/Button';
+import '../styles/DogDetails.css'
 
 export default function DogDetails(): ReactElement {
   const [dog, setDog] = useState<Dog | null>(null);
@@ -9,21 +10,7 @@ export default function DogDetails(): ReactElement {
   const navigate = useNavigate();
 
 
-  console.log('chipNumber: ', chipNumber);
-
   useEffect(() => {
-    /*  const fetchDog = async () => {
-     try {
-        const response = await fetch('https://majazocom.github.io/Data/dogs.json');
-        const dogsData = await response.json();
-        const selectedDog = dogsData.find((dog: Dog) => dog.chipNumber === chipNumber);
-        setDog(selectedDog || null);
-      } catch (error) {
-        console.error('Error fetching dog details:', error);
-      }
-    }; */
-
-  /*   fetchDog(); */
   const storedDogs = JSON.parse(localStorage.getItem('dogs') || '[]');
   const selectedDog = storedDogs.find((dog: Dog) => dog.chipNumber === chipNumber);
   setDog(selectedDog || null);
@@ -42,7 +29,7 @@ export default function DogDetails(): ReactElement {
   };
 
   return (
-    <div className="product-details container">
+    <div className="product-details">
       {dog ? (
         <>
           <section>
@@ -65,7 +52,7 @@ export default function DogDetails(): ReactElement {
               <p>Ingen ägarinformation tillgänglig</p>
             )}
           </section>
-          <div className="buttons">
+          <div className="dog-details-buttons">
             <Link to={`/edit/${dog.chipNumber}`}>
               <Button>Redigera</Button>
             </Link>

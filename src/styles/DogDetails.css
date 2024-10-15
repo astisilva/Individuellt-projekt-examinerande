@@ -1,1 +1,63 @@
+.product-details {
+  background-color: #faf0fc; 
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+ 
+}
 
+.product-details h1 {
+  color: #A488E0;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.product-details p {
+  font-size: 1.1rem;
+  color: #333; /* Mjuk kontrastfärg för text */
+}
+
+
+.product-details img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover; 
+  border-radius: 50%;
+  border: 4px solid #A7A4F7;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dog-details-buttons a {
+    color: white; /* Samma textfärg */
+  border-radius: 15px; /* Rundade hörn */
+  padding: 10px 20px;
+  display: inline-block; /* Gör så att länken får samma layout som en knapp */
+}
+
+.dog-details-buttons a,
+.dog-details-buttons button {  
+  color: white; /* Textfärg */
+  padding: 10px 20px;
+  border: none; /* Ta bort kantlinje */
+  border-radius: 15px; /* Rundade hörn */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.dog-details-buttons button:last-of-type {
+  background-color: #FFB3B3;
+}
+
+.dog-details-buttons button:last-of-type:hover {
+  background-color: #F08080; 
+}
+h2 {
+  color: #A488E0;
+  margin-top: 20px;
+  font-size: 1.5rem;
+}

@@ -18,7 +18,9 @@ export default function DogCard({ onDelete, dog, isAuthenticated }: DogCardProps
             <Button>Se detaljer</Button>
           </Link>
           {onDelete && (
-            <Button onClick={() => onDelete(dog.chipNumber)}>Ta bort</Button>
+            <Button onClic
+            
+            k={() => onDelete(dog.chipNumber)}>Ta bort</Button>
           )}
         </div>
       ) : (
