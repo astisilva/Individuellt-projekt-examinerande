@@ -42,7 +42,7 @@ export default function DogDetails(): ReactElement {
   };
 
   return (
-    <div className="product-details">
+    <div className="product-details container">
       {dog ? (
         <>
           <section>

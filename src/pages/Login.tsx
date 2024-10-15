@@ -1,5 +1,7 @@
 import { ReactElement, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { Button } from '../components/Button';
+import '../styles/Login.css'
 
 export default function Login(): ReactElement {
   const {login} = useAuth()
@@ -15,7 +17,8 @@ const handleLogin = (event:React.FormEvent) => {
 }
 
   return (
-    <form onSubmit={handleLogin}>
+    <section className='container'>
+    <form onSubmit={handleLogin} >
       <input
         type="text"
         placeholder="Användarnamn"
@@ -30,7 +33,8 @@ const handleLogin = (event:React.FormEvent) => {
         onChange={(event) => setPassword(event.target.value)}
         required
       />
-      <button type="submit">Logga in</button>
+      <Button type="submit">Logga in</Button>
     </form>
+    </section>
   );
 }

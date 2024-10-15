@@ -8,6 +8,7 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
+  align-items: center;
 }
 
 .navbar li {
@@ -16,13 +17,13 @@
 
 .navbar a {
   text-decoration: none;
-  color: #e7b5c0; /* Light Pink */
+  color: #4b0082; /* Light Pink */
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 .navbar .hundar {
   margin-left: auto;
 }
 a:hover {
-  color: #ffc0cb;
-  transition: color 0.3s ease;
+  color: #e7b5c0;
 }

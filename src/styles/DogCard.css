@@ -1,0 +1,54 @@
+.dog-card {
+  padding: 20px;
+  background-color: #faf0fc; /* Ljus lavendel bakgrund för Kuromi och Hello Kitty */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease;
+}
+
+.dog-card:hover {
+  transform: scale(1.05); 
+}
+
+.dog-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #FFB3B3; /* Rosa för Hello Kitty */
+  margin-bottom: 10px;
+}
+
+.dog-card .dog-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #A488E0; /* Lila färg */
+  margin-bottom: 5px;
+}
+
+.dog-card .dog-breed,
+.dog-card .dog-age {
+  font-size: 1rem;
+  color: #e7b5c0; /* Rosa text */
+}
+
+.dog-card .actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.actions button {
+  background-color: #A488E0; /* Lila för Kuromi */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.actions button:hover {
+  background-color: #FFB3B3; /* Rosa på hover */
+}

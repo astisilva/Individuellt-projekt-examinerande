@@ -1,4 +1,5 @@
 import { MouseEventHandler } from 'react';
+import '../styles/Button.css'
 
 interface IButtonProps {
   onClick?: MouseEventHandler<HTMLButtonElement>;

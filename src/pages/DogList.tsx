@@ -6,7 +6,7 @@ import { useAuth } from '../context/AuthContext';
 
 export default function DogList(): ReactElement {
   const [dogs, setDogs] = useState<Dog[]>([]);
-  const { isAuthenticated } = useAuth(); 
+  const { isAuthenticated } = useAuth();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,7 +15,6 @@ export default function DogList(): ReactElement {
 
         // om det finns hunddata i localstorage
         if (storedDogs) {
-          console.log('Dogs from localStorage:', JSON.parse(storedDogs));
           setDogs(JSON.parse(storedDogs));
         } else {
           const response = await fetch('https://majazocom.github.io/Data/dogs.json');
@@ -41,10 +40,6 @@ export default function DogList(): ReactElement {
     const updatedDogs = storedDogs.filter((dog: Dog) => dog.chipNumber !== chipNumber);
     localStorage.setItem('dogs', JSON.stringify(updatedDogs));
     setDogs(updatedDogs);
-    console.log(
-      'Dogs after deletion from localStorage:',
-      JSON.parse(localStorage.getItem('dogs') || '[]')
-    );
   };
 
   return (
@@ -52,7 +47,12 @@ export default function DogList(): ReactElement {
       <h1>Våra hundar</h1>
       <ul>
         {dogs.map((dog) => (
-          <DogCard dog={dog} key={dog.chipNumber} isAuthenticated={isAuthenticated}  onDelete={isAuthenticated ? () => handleDelete(dog.chipNumber):undefined} />
+          <DogCard
+            dog={dog}
+            key={dog.chipNumber}
+            isAuthenticated={isAuthenticated}
+            onDelete={isAuthenticated ? () => handleDelete(dog.chipNumber) : undefined}
+          />
         ))}
       </ul>
       {!isAuthenticated && <p>Du måste logga in för att kunna ta bort hundar.</p>}

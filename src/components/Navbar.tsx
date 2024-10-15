@@ -2,6 +2,7 @@ import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
 import { useAuth } from "../context/AuthContext";
+import { Button } from './Button';
 
 export default function Navbar(): ReactElement {
   const { isAuthenticated, logout } = useAuth();
@@ -19,20 +20,20 @@ export default function Navbar(): ReactElement {
         </li>
         {isAuthenticated ? (
           <li>
-            <button onClick={logout}>Logga ut</button>
+            <Button onClick={logout}>Logga ut</Button>
           </li>
         ) : (
           <li>
-            <Link to="/login"> <button>Logga in</button></Link>
+            <Link to="/login"> <Button>Logga in</Button></Link>
           </li>
         )}
-        <li>
+     {/*    <li>
           
           <Link to="/contact">Kontakt</Link>
         </li>
         <li>
           <Link to="/about">Om Oss</Link>
-        </li>
+        </li> */}
       </ul>
     </nav>
   );

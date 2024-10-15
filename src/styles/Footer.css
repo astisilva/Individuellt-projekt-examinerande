@@ -1,0 +1,30 @@
+footer {
+  background-color: #f4e4f9;
+  color: #6a0dad;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 2px solid #e7b5c0; 
+}
+
+.footer p {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  font-size: 14px;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: #6a0dad;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+ transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #e7b5c0;  
+ 
+}

@@ -15,3 +15,9 @@ export interface Dog {
   present: boolean;
   owner?: Owner;
 }
+
+export interface DogCardProps {
+  dog: Dog;
+  isAuthenticated: boolean;
+  onDelete?: (chipNumber: string) => void;
+}

@@ -1,0 +1,42 @@
+.dog-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px;
+  background-color: #f4e4f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dog-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.dog-form-container input,
+.dog-form-container select,
+.dog-form-container label {
+  font-family: 'Quicksand', sans-serif;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #f6c1d8;
+  background-color: #fff0f5;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dog-form-container input:focus {
+  border-color: #9b7ebd;
+}
+
+h1, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: #9b7ebd;
+}
+
+
