@@ -17,7 +17,7 @@
 
 .navbar a {
   text-decoration: none;
-  color: #4b0082; /* Light Pink */
+  color: #4b0082; 
   font-weight: bold;
   transition: color 0.3s ease;
 }

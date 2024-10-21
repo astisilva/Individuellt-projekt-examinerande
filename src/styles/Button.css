@@ -1,23 +1,23 @@
 .button{
-  background-color: #f4e4f9; /* Ljus lavendel (inspirerat av Kuromi) */
-  color: #e7b5c0; /* Ljus rosa */
+  background-color: #f4e4f9; 
+  color: #e7b5c0; 
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   padding: 10px 20px;
   border: none;
-  border-radius: 20px; /* Rundade hörn */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Liten skugga för en lekfull look */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* För smooth hover-effekt */
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
 }
 
 .button:hover {
   background-color: #e7b5c0; 
   color: #9b7ebd;
-  transform: translateY(-2px); /* Liten "pop"-effekt */
+  transform: translateY(-2px); 
 }
 
 .button:active {
-  transform: translateY(0); /* Ingen rörelse när du trycker på knappen */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Mindre skugga vid klick */
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }

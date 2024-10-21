@@ -7,6 +7,7 @@ import DogDetails from './pages/DogDetails';
 import DogForm from './pages/DogForm';
 import Login from './pages/Login';
 import ProtectedRoute from './components/ProtectedRoute';
+import ArrivedDogs from './pages/ArrivedDogs';
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,9 +19,9 @@ export const router = createBrowserRouter(
       <Route
         path="/doglist"
         element={
-         /*  <ProtectedRoute> */
+          <ProtectedRoute>
             <DogList />
-    /*   </ProtectedRoute> */
+     </ProtectedRoute> 
         }
       />
       <Route
@@ -47,13 +48,19 @@ export const router = createBrowserRouter(
           </ProtectedRoute>
         }
       />
+      <Route
+        path="/arriveddogs"
+        element={
+          <ProtectedRoute>
+            <ArrivedDogs />
+          </ProtectedRoute>
+        }
+      />
 
       <Route path="/login" element={<Login />} />
       <Route path="*" element={<ErrorPage />} />
 
-      {/*   <Route path="/contact" element={<Contact />} />
-<Route path="/about" element={<About />} /> */}
-      {/* kommer att användas senare om jag hinner */}
+    
     </Route>
   )
 );

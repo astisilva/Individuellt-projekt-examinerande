@@ -2,7 +2,7 @@ import { ReactElement, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Dog } from '../models/Dog';
 import { Button } from '../components/Button';
-import '../styles/DogForm.css'
+import '../styles/DogForm.css';
 
 export default function DogForm(): ReactElement {
   const { chipNumber } = useParams();
@@ -68,7 +68,8 @@ export default function DogForm(): ReactElement {
                   lastName: '',
                   phoneNumber: '',
                 },
-              });
+              }
+            );
           } else {
             console.error('Det fanns ingen hund med detta chipnummer');
           }
@@ -95,7 +96,6 @@ export default function DogForm(): ReactElement {
       });
     }
   };
-
 
   // hanterar bilduppladdning
   const handleImagUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -136,8 +136,8 @@ export default function DogForm(): ReactElement {
   };
 
   return (
-    <div className='dog-form-container'>
-      <form className='dog-form' onSubmit={handleSubmit}>
+    <div className="dog-form-container">
+      <form className="dog-form" onSubmit={handleSubmit}>
         <h1>{chipNumber ? 'Redigera hund' : 'Lägg till hund'}</h1>
         {chipNumber ? (
           <p>Chipnummer: {chipNumber}</p>
@@ -170,7 +170,7 @@ export default function DogForm(): ReactElement {
           Ålder:
           <input type="number" name="age" value={dog.age} onChange={handleChange} required />
         </label>
-         <h3>Ägarinformation</h3>
+        <h3>Ägarinformation</h3>
         <label>
           Förnamn:
           <input

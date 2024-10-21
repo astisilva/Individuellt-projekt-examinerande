@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Navbar.css';
-import { useAuth } from "../context/AuthContext";
+import { useAuth } from '../context/AuthContext';
 import { Button } from './Button';
 
 export default function Navbar(): ReactElement {
@@ -14,26 +14,24 @@ export default function Navbar(): ReactElement {
         </li>
         <li className="hundar">
           <Link to="/doglist">Våra hundar</Link>
+        </li>  <li>
+          <Link to="/arriveddogs">Ankomna hundar</Link>
         </li>
         <li>
           <Link to="/dogform">Lägga till hund</Link>
         </li>
+      
         {isAuthenticated ? (
           <li>
             <Button onClick={logout}>Logga ut</Button>
           </li>
         ) : (
           <li>
-            <Link to="/login"> <Button>Logga in</Button></Link>
+            <Link to="/login">
+              <Button>Logga in</Button>
+            </Link>
           </li>
         )}
-     {/*    <li>
-          
-          <Link to="/contact">Kontakt</Link>
-        </li>
-        <li>
-          <Link to="/about">Om Oss</Link>
-        </li> */}
       </ul>
     </nav>
   );

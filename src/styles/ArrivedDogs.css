@@ -1,0 +1,51 @@
+.arrived-dogs-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.arrived-dogs-container {
+  flex: 1; 
+  padding: 20px;
+
+}
+
+.arrived-dogs-container h1{
+  text-align: center;
+}
+.arrived-dogs-list {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 20px; 
+  justify-content: center; 
+  padding: 0;
+  margin: 0;
+  list-style-type: none; 
+}
+
+.arrived-dog-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px; 
+  margin-bottom: 20px;
+  background-color: #f4e4f9;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.arrived-dog-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.arrived-dog-name {
+  font-size: 1.2rem;
+  color: #800f82; 
+  text-align: center;
+  margin-top: 10px;
+}
+

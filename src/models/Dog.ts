@@ -20,4 +20,5 @@ export interface DogCardProps {
   dog: Dog;
   isAuthenticated: boolean;
   onDelete?: (chipNumber: string) => void;
+  onArrive?: (chipNumber: string) => void;
 }

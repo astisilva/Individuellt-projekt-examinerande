@@ -17,7 +17,7 @@
 
 .product-details p {
   font-size: 1.1rem;
-  color: #333; /* Mjuk kontrastfärg för text */
+  color: #333; 
 }
 
 
@@ -32,18 +32,18 @@
 }
 
 .dog-details-buttons a {
-    color: white; /* Samma textfärg */
-  border-radius: 15px; /* Rundade hörn */
+    color: white; 
+  border-radius: 15px;
   padding: 10px 20px;
-  display: inline-block; /* Gör så att länken får samma layout som en knapp */
+  display: inline-block;
 }
 
 .dog-details-buttons a,
 .dog-details-buttons button {  
-  color: white; /* Textfärg */
+  color: white; 
   padding: 10px 20px;
-  border: none; /* Ta bort kantlinje */
-  border-radius: 15px; /* Rundade hörn */
+  border: none; 
+  border-radius: 15px; 
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
