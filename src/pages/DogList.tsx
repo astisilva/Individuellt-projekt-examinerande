@@ -51,21 +51,26 @@ export default function DogList(): ReactElement {
   const handleDogArrived = (chipNumber: string) => {
     // Hämtar de hundar som redan har markerats som "ankommit" från localStorage.
     const storedArrivedDogs = JSON.parse(localStorage.getItem('arrivedDogs') || '[]');
-
+  
     // Hittar den hund som har ankommit, genom att matcha på chipNumber.
     const arrivedDog = dogs.find((dog: Dog) => dog.chipNumber === chipNumber);
-
-    if (arrivedDog && !storedArrivedDogs.some((dog: Dog) => dog.chipNumber === chipNumber)) {
-      const updatedArrivedDogs = [...storedArrivedDogs, arrivedDog];
-
-      // Spara hundarna som ankommit i localstorage
-      localStorage.setItem('arrivedDogs', JSON.stringify(updatedArrivedDogs));
-      alert(`${arrivedDog.name} har ankommit till dagis!`);
+  
+    if (arrivedDog) {
+      // Kontrollera om hunden redan är ankommen
+      if (!storedArrivedDogs.some((dog: Dog) => dog.chipNumber === chipNumber)) {
+        const updatedArrivedDogs = [...storedArrivedDogs, arrivedDog];
+  
+        // Spara hundarna som ankommit i localstorage
+        localStorage.setItem('arrivedDogs', JSON.stringify(updatedArrivedDogs));
+        alert(`${arrivedDog.name} har ankommit till dagis!`);
+      } else {
+        alert(`${arrivedDog.name} är redan ankommen.`);
+      }
     } else {
-      alert(`${arrivedDog.name} är redan ankommen.`);
+      alert('Hund med detta chipnummer hittades inte.');
     }
-    
   };
+  
 
   return (
     <article className="product-list">
