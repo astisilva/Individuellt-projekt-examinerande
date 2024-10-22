@@ -2,6 +2,12 @@
   background-color: #9b7ebd;
   padding: 20px 20px;
 }
+.navbar-logo {
+  font-size: 30px; 
+  font-weight: bold; 
+  color: #b85cb3; 
+  text-shadow: 2px 2px 4px #e7b5c0;
+}
 
 .navbar ul {
   display: flex;

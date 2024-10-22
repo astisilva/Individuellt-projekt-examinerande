@@ -9,9 +9,9 @@ export default function Navbar(): ReactElement {
   return (
     <nav className="navbar">
       <ul>
-        <li>
-          <Link to="/">Startsidan</Link>
-        </li>
+      <li className="navbar-logo">
+  <Link to="/">Paw Place</Link>
+</li>
         <li className="hundar">
           <Link to="/doglist">Våra hundar</Link>
         </li>  <li>
