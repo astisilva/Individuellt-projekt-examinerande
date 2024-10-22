@@ -1,9 +1,12 @@
-footer {
+.footer {
   background-color: #f4e4f9;
   color: #6a0dad;
   text-align: center;
   padding: 20px 0;
   border-top: 2px solid #e7b5c0; 
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrera innehållet horisontellt */
 }
 
 .footer p {

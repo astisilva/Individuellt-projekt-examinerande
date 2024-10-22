@@ -7,11 +7,17 @@ export default function ArrivedDogs() {
   const [arrivedDogs, setArrivedDogs] = useState<Dog[]>([]);
 
   useEffect(() => {
+     // Hämtar den sparade listan med 'arrivedDogs' från localStorage
+     // Om det inte finns något i localStorage, returnerar '|| []' en tom array.
     const storedArrivedDogs = JSON.parse(localStorage.getItem('arrivedDogs') || '[]');
+   // Uppdaterar tillståndet 'arrivedDogs' med den hämtade listan från localStorage.
     setArrivedDogs(storedArrivedDogs);
   }, []);
 
+
+  // funktion för att ange att en hund har gått hem
   const handleGoneHome = (chipNumber: string) => {
+    // En ny lista skapas genom att filtrera bort den hund som har det givna chipNumret. Om hundens chipnummer inte är samma, då behåller den hunden i listan.
     const updatedArrivedDogs = arrivedDogs.filter((dog) => dog.chipNumber !== chipNumber);
     localStorage.setItem('arrivedDogs', JSON.stringify(updatedArrivedDogs));
     setArrivedDogs(updatedArrivedDogs);
@@ -32,8 +38,7 @@ export default function ArrivedDogs() {
         ))}
       </ul>
       {arrivedDogs.length === 0 && <p className="no-dogs-message">Inga hundar har ankommit än.</p>}
-    </main>
-   
+    </main>   
   </div>
   
   );

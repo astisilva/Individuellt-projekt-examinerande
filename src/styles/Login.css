@@ -1,9 +1,9 @@
-.container {
+.login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #faf0fc;
+
 }
 
 form {

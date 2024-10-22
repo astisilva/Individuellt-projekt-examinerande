@@ -17,7 +17,7 @@ const handleLogin = (event:React.FormEvent) => {
 }
 
   return (
-    <section className='container'>
+    <section className='login-container'>
     <form onSubmit={handleLogin} >
       <input
         type="text"

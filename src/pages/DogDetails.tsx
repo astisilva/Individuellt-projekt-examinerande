@@ -29,6 +29,7 @@ export default function DogDetails(): ReactElement {
   };
 
   return (
+    <div className="container">
     <div className="product-details">
       {dog ? (
         <>
@@ -66,6 +67,7 @@ export default function DogDetails(): ReactElement {
       ) : (
         <p>Loading...</p>
       )}
+    </div>
     </div>
   );
 }

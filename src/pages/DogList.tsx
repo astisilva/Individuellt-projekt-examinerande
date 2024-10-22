@@ -64,6 +64,7 @@ export default function DogList(): ReactElement {
     } else {
       alert(`${arrivedDog.name} är redan ankommen.`);
     }
+    
   };
 
   return (

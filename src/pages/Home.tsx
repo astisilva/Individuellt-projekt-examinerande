@@ -4,14 +4,11 @@ import '../styles/Home.css'
 
 export default function Home():ReactElement {
   return (
-    <main className="container">
+    <main className="home-container">
     <h1>Välkommen till Paw Place!</h1>
-    <p>Här kan du hitta allt för din fyrbenta vän.</p>
-    <div className="hero">
-      <img src="path_to_your_image.jpg" alt="Hundar som leker" className="hero-image" />
-      <p>Utforska våra tjänster för hundpassning och dagis!</p>
-    </div>
- 
+    <p>Ditt hunddagisverktyg.</p>
+      <p>Logga in för att hantera hundar, registrera ankomster och hemgång samt få åtkomst till viktiga informationer om våra hundar.</p>
+      <p>Vi ser fram emot att hjälpa dig med en smidig och effektiv hunddagisupplevelse!</p>   
   </main>
   );
 }
