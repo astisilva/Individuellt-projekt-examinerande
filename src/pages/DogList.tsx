@@ -30,8 +30,12 @@ export default function DogList(): ReactElement {
           setDogs(dogsData);
         }
       } catch (error) {
-        console.error('Error fetching dogs:', error instanceof Error ? error.message : error);
-      }
+  if (error instanceof Error) {
+    console.error('Error fetching dogs:', error.message);
+  } else {
+    console.error('Error fetching dogs:', String(error));
+  }
+}
     };
     fetchData();
   }, []);
