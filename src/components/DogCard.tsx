@@ -17,7 +17,7 @@ export default function DogCard({ onDelete, onArrive, dog, isAuthenticated }: Do
             <Button>Se detaljer</Button>
           </Link>
           {onDelete && <Button onClick={() => onDelete(dog.chipNumber)}>Ta bort</Button>}
-          <Button onClick={() => onArrive(dog.chipNumber)}>Ankommit</Button>
+          <Button onClick={() => onArrive?(dog.chipNumber)}>Ankommit</Button>
         </div>
       ) : (
         <p>Du måste logga in för att kunna se detaljer och ta bort hundar.</p>
